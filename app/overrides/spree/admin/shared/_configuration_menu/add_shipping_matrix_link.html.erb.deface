@@ -1,0 +1,2 @@
+<!-- insert_bottom '[data-hook="admin_configurations_sidebar_menu"]' -->
+<%= configurations_sidebar_menu_item Spree.t(:title, scope: :shipping_matrix), spree.admin_shipping_matrices_path %>
