@@ -1,21 +1,24 @@
-<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+<%= render partial: 'spree/admin/shared/configuration_menu' %>
 
 <% content_for :page_title do %>
-  <%= Spree.t(:editting, scope: :shipping_matrix) %> <span class="green">"<%= @shipping_matrix.name %>"</span>
+  <%= Spree.t(:editting, scope: :shipping_matrix) %>
+  <span class="green">"<%= @shipping_matrix.name %>"</span>
 <% end %>
 
 <% content_for :page_actions do %>
   <li>
-    <%= button_link_to Spree.t(:back, scope: :shipping_matrix), spree.admin_shipping_matrices_path, :icon => 'arrow-left' %>
+    <%= button_link_to Spree.t(:back, scope: :shipping_matrix),
+                       spree.admin_shipping_matrices_path,
+                       icon: 'arrow-left' %>
   </li>
 <% end %>
 
-<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @shipping_matrix } %>
+<%= render partial: 'spree/shared/error_messages',
+           locals: { target: @shipping_matrix } %>
 
 <%= form_for [:admin, @shipping_matrix] do |f| %>
   <fieldset>
-        <%= render :partial => 'form', :locals => { :f => f } %>
-
+    <%= render :partial => 'form', :locals => { :f => f } %>
     <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
   </fieldset>
 <% end %>
