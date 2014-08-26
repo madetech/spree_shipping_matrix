@@ -1,0 +1,11 @@
+<%= render partial: 'spree/shared/error_messages',
+           locals: { target: @shipping_matrix } %>
+
+<%= form_for [:admin, @shipping_matrix] do |f| %>
+  <fieldset>
+    <legend align="center"><%= Spree.t(:new, scope: :shipping_matrix) %></legend>
+    <%= render partial: 'form', locals: { f: f } %>
+
+    <%= render partial: 'spree/admin/shared/new_resource_links' %>
+  </fieldset>
+<% end %>

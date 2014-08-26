@@ -1,0 +1,9 @@
+<div data-hook="admin_shipping_matrix_form_fields" class="align-center row">
+  <div class="alpha four columns">
+    <%= f.field_container :name do %>
+      <%= f.label :name, Spree.t(:name, scope: :shipping_matrix) %> <span class="required">*</span><br />
+      <%= f.text_field :name, class: 'fullwidth' %>
+      <%= f.error_message_on :name %>
+    <% end %>
+  </div>
+</div>
