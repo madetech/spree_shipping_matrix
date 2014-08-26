@@ -37,14 +37,14 @@ require 'spree_shipping_matrix/factories'
 
 [![made](https://s3-eu-west-1.amazonaws.com/made-assets/googleapps/google-apps.png)][made]
 
-Developed and maintained by [Made][made]. Key contributions:
+Developed and maintained by [Made Tech][made]. Key contributions:
 
  * [Seb Ashton](https://github.com/SebAshton)
  * [Luke Morton](https://github.com/DrPheltRight)
 
 ## License
 
-Copyright © 2014 Made by Made Ltd. It is free software, and may be
+Copyright © 2014 Made Tech Ltd. It is free software, and may be
 redistributed under the terms specified in the [MIT-LICENSE][license] file.
 
 [made]: http://www.madetech.co.uk?ref=github&repo=spree_shipping_matrix
