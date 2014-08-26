@@ -1,4 +1,6 @@
 describe Spree::ShippingMatrix do
+  it { is_expected.to respond_to(:rules) }
+
   context 'when created' do
     subject { described_class.create(attrs) }
 
