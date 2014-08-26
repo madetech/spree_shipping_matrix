@@ -18,8 +18,8 @@ end
 def given_i_am_logged_into_the_cms
   user = FactoryGirl.create(:admin_user)
   visit spree.admin_path
-  fill_in :spree_user_email, :with => user.email
-  fill_in :spree_user_password, :with => user.password
+  fill_in :spree_user_email, with: user.email
+  fill_in :spree_user_password, with: user.password
   click_button 'Login'
 end
 
@@ -29,13 +29,13 @@ end
 
 def when_i_create_a_new_shipping_matrix
   visit spree.new_admin_shipping_matrix_path
-  fill_in :shipping_matrix_name, :with => 'UK next day'
+  fill_in :shipping_matrix_name, with: 'UK next day'
   click_button 'Create'
 end
 
 def when_i_edit_a_shipping_matrix
   visit spree.edit_admin_shipping_matrix_path(@matrix)
-  fill_in :shipping_matrix_name, :with => 'UK next day updated'
+  fill_in :shipping_matrix_name, with: 'UK next day updated'
   click_button 'Update'
 end
 
