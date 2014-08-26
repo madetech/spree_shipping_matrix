@@ -8,7 +8,7 @@ describe Spree::ShippingMatrix do
     end
 
     context 'and no name provided' do
-      let(:attrs) { {} }
+      before(:each) { attrs.delete(:name) }
       it { is_expected.to be_invalid }
     end
   end
