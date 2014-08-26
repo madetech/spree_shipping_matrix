@@ -2,6 +2,8 @@
 
 Advanced shipping calculator based on rules matrix for Spree.
 
+[![Code Climate](https://codeclimate.com/github/madebymade/spree_shipping_matrix/badges/gpa.svg)](https://codeclimate.com/github/madebymade/spree_shipping_matrix)[![Test Coverage](https://codeclimate.com/github/madebymade/spree_shipping_matrix/badges/coverage.svg)](https://codeclimate.com/github/madebymade/spree_shipping_matrix)
+
 ## Installation
 
 Add spree_shipping_matrix to your Gemfile:
