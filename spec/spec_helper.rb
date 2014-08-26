@@ -31,7 +31,7 @@ require 'spree/testing_support/factories'
 require 'spree/testing_support/url_helpers'
 
 # Requires factories defined in lib/spree_shipping_matrix/factories.rb
-require 'spree_shipping_matrix/factories'
+Dir[File.join(File.dirname(__FILE__), 'factories/**/*_factory.rb')].each { |f| require f }
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
