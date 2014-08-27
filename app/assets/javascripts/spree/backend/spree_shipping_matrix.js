@@ -1,3 +1,5 @@
+//= require spree/backend
+
 $(document).on('click', '.js-remove-row', function () {
   var $removeLink = $(this);
   var $row = $removeLink.closest('.row');
