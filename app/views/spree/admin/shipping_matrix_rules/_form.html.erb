@@ -9,12 +9,16 @@
 
   <div class="four columns">
     <%= f.label(:min_line_item_total) %>
-    <%= f.number_field(:min_line_item_total) %>
+    <%= f.number_field(:min_line_item_total,
+                       value: number_with_precision(f.object.min_line_item_total,
+                                                    precision: 2)) %>
   </div>
 
   <div class="omega four columns">
     <%= f.label(:amount) %>
-    <%= f.number_field(:amount) %>
+    <%= f.number_field(:amount,
+                       value: number_with_precision(f.object.amount,
+                                                    precision: 2)) %>
 
     <% if f.object.persisted? %>
       <a
