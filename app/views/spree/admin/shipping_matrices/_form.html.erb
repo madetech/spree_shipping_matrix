@@ -1,6 +1,18 @@
-<%= f.field_container :name, class: ['align-center'] do %>
+<%= f.field_container :name, class: ['row'] do %>
   <%= f.label :name, Spree.t(:name, scope: :shipping_matrix) %>
   <span class="required">*</span><br />
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class: ['fullwidth'] %>
   <%= f.error_message_on :name %>
 <% end %>
+
+<div class="js-shipping-matrix-rules">
+  <%= f.fields_for :rules do |f| %>
+    <%= render partial: 'spree/admin/shipping_matrix_rules/form',
+               locals: { f: f } %>
+  <% end %>
+
+  <%= link_to Spree.t(:add_rule, scope: :shipping_matrix),
+              '#new-rule',
+              class: 'js-duplicate-last-row' %>
+</div>
+

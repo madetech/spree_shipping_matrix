@@ -9,12 +9,11 @@
     <%= button_link_to Spree.t(:new, scope: :shipping_matrix),
                        new_admin_shipping_matrix_url,
                        remote: true,
-                       icon: 'plus',
-                       id: 'new_shipping_matrix_link' %>
+                       icon: 'plus' %>
   </li>
 <% end %>
 
-<div id="new_shipping_matrix"></div>
+<div class="js-new-shipping-matrix"></div>
 
 <% if @shipping_matrices.any? %>
 <table
@@ -56,6 +55,9 @@
 <% else %>
   <div class="alpha twelve columns no-objects-found">
     <%= Spree.t(:no_resource_found, resource: Spree.t(:title, scope: :shipping_matrix)) %>,
-    <%= link_to Spree.t(:add_one), spree.new_admin_shipping_matrix_path %>!
+
+    <%= link_to Spree.t(:add_one),
+                spree.new_admin_shipping_matrix_path,
+                remote: true %>!
   </div>
 <% end %>

@@ -1,2 +1,6 @@
-$("#new_shipping_matrix").html('<%= escape_javascript(render :template => "spree/admin/shipping_matrices/new", :formats => [:html], :handlers => [:erb]) %>');
-$("#new_shipping_matrix_link").parent().hide();
+$('.js-new-shipping-matrix').html('<%= escape_javascript(render template: "spree/admin/shipping_matrices/new", formats: [:html], handlers: [:erb]) %>');
+$('a[href$="<%= spree.new_admin_shipping_matrix_path %>"]').parent().hide();
+$('select.select2').select2({
+  allowClear: true,
+  dropdownAutoWidth: true
+});

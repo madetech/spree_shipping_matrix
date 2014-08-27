@@ -18,6 +18,7 @@
 
 <%= form_for [:admin, @shipping_matrix] do |f| %>
   <fieldset>
+    <legend align="center"><%= Spree.t(:editting, scope: :shipping_matrix) %></legend>
     <%= render :partial => 'form', :locals => { :f => f } %>
     <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
   </fieldset>
