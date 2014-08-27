@@ -10,3 +10,4 @@ en:
       editting: 'Edit Shipping Matrix'
       back: 'Back to Shipping Matrices'
       add_rule: 'Add rule'
+    matrix_id: 'Shipping Matrix'
