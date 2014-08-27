@@ -9,6 +9,7 @@ require File.expand_path('../dummy/config/environment.rb',  __FILE__)
 require 'rspec/rails'
 require 'database_cleaner'
 require 'ffaker'
+require 'capybara/poltergeist'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -23,6 +24,14 @@ require 'spree/testing_support/url_helpers'
 
 # Requires factories defined in lib/spree_shipping_matrix/factories.rb
 Dir[File.join(File.dirname(__FILE__), 'factories/**/*_factory.rb')].each { |f| require f }
+
+Capybara.default_selector = :css
+Capybara.javascript_driver = :poltergeist
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, timeout: 45,
+                                         js_errors: false,
+                                         phantomjs_options: ['--load-images=no'])
+end
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
