@@ -7,7 +7,11 @@ module Spree
 
     validates :matrix, presence: true
     validates :role, presence: true
-    validates :min_line_item_total, presence: true
-    validates :amount, presence: true
+
+    validates :min_line_item_total, presence: true,
+                                    numericality: true
+
+    validates :amount, presence: true,
+                       numericality: true
   end
 end

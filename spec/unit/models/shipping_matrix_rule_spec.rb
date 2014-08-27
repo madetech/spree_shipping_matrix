@@ -17,5 +17,19 @@ describe Spree::ShippingMatrixRule do
         it { is_expected.to be_invalid }
       end
     end
+
+    [:matrix, :role, :min_line_item_total, :amount].each do |field|
+      context "and a ##{field} is not provided" do
+        before(:each) { attrs.delete(field) }
+        it { is_expected.to be_invalid }
+      end
+    end
+
+    [:min_line_item_total, :amount].each do |field|
+      context "and text value provided for ##{field}" do
+        before(:each) { attrs.merge!(field => 'word') }
+        it { is_expected.to be_invalid }
+      end
+    end
   end
 end
