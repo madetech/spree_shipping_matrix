@@ -1,7 +1,10 @@
-# encoding: UTF-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'spree_shipping_matrix/version'
+
 Gem::Specification.new do |s|
   s.name        = 'spree_shipping_matrix'
-  s.version     = '0.1.0'
+  s.version     = SpreeShippingMatrix::VERSION
 
   s.summary     = 'Advanced shipping calculator based on rules matrix for Spree'
   s.description = ''
