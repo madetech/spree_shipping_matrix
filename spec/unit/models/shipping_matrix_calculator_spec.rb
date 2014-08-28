@@ -67,7 +67,7 @@ describe Spree::ShippingMatrixCalculator do
         end
       end
 
-      context 'and order anonymous' do
+      context 'and the order is a guest checkout' do
         before(:each) do
           package.contents.first.inventory_unit.order.update(user: nil, email: 'e@e.com')
         end
@@ -76,7 +76,9 @@ describe Spree::ShippingMatrixCalculator do
           create(:shipping_matrix_rule, matrix: matrix, role: create(:role, name: 'entry'))
         end
 
-        it { is_expected.to eq(first_entry_rule.amount.to_f) }
+        it 'should equal first rule matching #min_line_item_total and #role name is "entry"' do
+          is_expected.to eq(first_entry_rule.amount.to_f)
+        end
       end
     end
   end
