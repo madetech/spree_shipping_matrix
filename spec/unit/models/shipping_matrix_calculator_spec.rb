@@ -19,7 +19,7 @@ describe Spree::ShippingMatrixCalculator do
 
     context 'when matrix has no rules' do
       let(:matrix) { create(:shipping_matrix) }
-      it { is_expected.to be(0.0) }
+      it { is_expected.to eq(0.0) }
     end
 
     context 'when matrix has rules' do
