@@ -10,26 +10,26 @@ feature 'Shipping Matrix' do
   end
 
   scenario 'editing shipping matrix' do
-    given_i_have_1_shipping_matrix_with_num_of_rules(1)
+    given_i_have_a_shipping_matrix_with(num_of_rules: 1)
     when_i_edit_a_shipping_matrix
     then_i_should_see_changes_to_the_shipping_matrix
   end
 
   scenario 'adding rule to shipping matrix', js: true do
-    given_i_have_1_shipping_matrix_with_num_of_rules(1)
+    given_i_have_a_shipping_matrix_with(num_of_rules: 1)
     when_i_add_2_rules_to_the_shipping_matrix
     then_the_num_of_rules_should_be(3)
   end
 
   scenario 'removing rule from shipping matrix', js: true do
-    given_i_have_1_shipping_matrix_with_num_of_rules(2)
+    given_i_have_a_shipping_matrix_with(num_of_rules: 2)
     when_i_remove_1_rule
     then_the_num_of_rules_should_be(1)
   end
 end
 
-def given_i_have_1_shipping_matrix_with_num_of_rules(num_of_rules)
- @matrix = create(:shipping_matrix_with_rules, num_of_rules: num_of_rules)
+def given_i_have_a_shipping_matrix_with(with)
+ @matrix = create(:shipping_matrix_with_rules, with)
 end
 
 def when_i_create_a_new_shipping_matrix
