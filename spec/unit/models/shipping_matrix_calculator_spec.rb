@@ -28,9 +28,7 @@ describe Spree::ShippingMatrixCalculator do
 
       let(:rule_with_matching_role) { highest_min_line_item_total }
 
-      before(:each) do
-        matrix.rules << highest_min_line_item_total
-      end
+      before(:each) { matrix.rules << highest_min_line_item_total }
 
       context 'and a rule with highest matching min line item total has amount of 4.99' do
         before(:each) { highest_min_line_item_total.update!(amount: 4.99) }
@@ -40,9 +38,7 @@ describe Spree::ShippingMatrixCalculator do
       context 'and two rules with the same highest min line item total match' do
         let(:another_rule) { create(:shipping_matrix_rule, min_line_item_total: 100) }
 
-        before(:each) do
-          matrix.rules << another_rule
-        end
+        before(:each) { matrix.rules << another_rule }
 
         context 'but only one rule#role matches and has amount of 3.99' do
           before(:each) do
