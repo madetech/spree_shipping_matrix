@@ -28,6 +28,12 @@ feature 'Shipping Matrix in checkout flow' do
       then_i_should_see_the_cheapest_delivery_price_of(price)
     end
   end
+
+  scenario "Free shipping method always wins" do
+    given_i_am_logged_in
+    when_there_is_a_free_delivery_method
+    then_the_delivery_should_be_free
+  end
 end
 
 def given_there_are_many_spree_roles
@@ -67,6 +73,11 @@ def when_there_is_more_than_one_shipping_method
   when_i_have_reached_the_delivery_stage_of_checkout
 end
 
+def when_there_is_a_free_delivery_method
+  create(:free_shipping_method)
+  when_i_have_reached_the_delivery_stage_of_checkout
+end
+
 def then_i_should_see_the_delivery_price_of(expected_delivery)
   visit spree.checkout_state_path(:delivery)
   expect(page).to have_content(expected_delivery)
@@ -74,4 +85,8 @@ end
 
 def then_i_should_see_the_cheapest_delivery_price_of(expected_delivery)
   then_i_should_see_the_delivery_price_of(expected_delivery)
+end
+
+def then_the_delivery_should_be_free
+  then_i_should_see_the_delivery_price_of('0.00')
 end
