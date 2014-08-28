@@ -3,15 +3,12 @@ describe Spree::ShippingMatrixCalculator do
   let(:variant2) { build(:variant, price: 20) }
 
   let(:role) { create(:role) }
-  let(:user) do
-    create(:user, spree_roles: [role])
-  end
+  let(:user) { create(:user, spree_roles: [role]) }
 
-  let(:package) do
-    package = build(:stock_package,
-                    variants_contents: { variant1 => 4, variant2 => 6 })
+  let (:package) { build(:stock_package, variants_contents: { variant1 => 4, variant2 => 6 }) }
+
+  before(:each) do
     package.contents.first.inventory_unit.order.update(user: user)
-    package
   end
 
   context '#compute' do
@@ -71,15 +68,13 @@ describe Spree::ShippingMatrixCalculator do
       end
 
       context 'and order anonymous' do
-        let(:package) do
-          package = build(:stock_package,
-                          variants_contents: { variant1 => 4, variant2 => 6 })
+        before(:each) do
           package.contents.first.inventory_unit.order.update(user: nil, email: 'e@e.com')
-          package
         end
 
-        let(:first_entry_rule) { create(:shipping_matrix_rule, matrix: matrix,
-                                                               role: create(:role, name: 'entry')) }
+        let(:first_entry_rule) do
+          create(:shipping_matrix_rule, matrix: matrix, role: create(:role, name: 'entry'))
+        end
 
         it { is_expected.to eq(first_entry_rule.amount.to_f) }
       end
