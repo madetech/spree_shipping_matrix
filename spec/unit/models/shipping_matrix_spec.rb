@@ -19,13 +19,13 @@ describe Spree::ShippingMatrix do
     subject { matrix.rules }
 
     let(:rule_with_lowest_min_line_item_total) do
-      FactoryGirl.create(:shipping_matrix_rule, matrix: matrix,
-                                                min_line_item_total: 50)
+      create(:shipping_matrix_rule, matrix: matrix,
+                                    min_line_item_total: 50)
     end
 
     let(:rule_with_highest_min_line_item_total) do
-      FactoryGirl.create(:shipping_matrix_rule, matrix: matrix,
-                                                min_line_item_total: 100)
+      create(:shipping_matrix_rule, matrix: matrix,
+                                    min_line_item_total: 100)
     end
 
     before(:each) do

@@ -29,8 +29,7 @@ feature 'Shipping Matrix' do
 end
 
 def given_i_have_1_shipping_matrix_with_num_of_rules(num_of_rules)
- @matrix = FactoryGirl.create(:shipping_matrix_with_rules,
-                              num_of_rules: num_of_rules)
+ @matrix = create(:shipping_matrix_with_rules, num_of_rules: num_of_rules)
 end
 
 def when_i_create_a_new_shipping_matrix

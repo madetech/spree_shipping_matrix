@@ -12,11 +12,11 @@ feature 'Shipping Matrix Calculator' do
 end
 
 def and_i_have_shipping_category
-  FactoryGirl.create(:shipping_category)
+  create(:shipping_category)
 end
 
 def and_i_have_shipping_matrices_and_rules
-  FactoryGirl.create(:shipping_matrix_with_rules, num_of_rules: 3)
+  create(:shipping_matrix_with_rules, num_of_rules: 3)
 end
 
 def when_i_create_a_new_shipping_method_using_matrix_calculator

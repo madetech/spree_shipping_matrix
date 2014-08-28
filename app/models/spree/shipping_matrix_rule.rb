@@ -13,5 +13,27 @@ module Spree
 
     validates :amount, presence: true,
                        numericality: true
+
+    def matches?(info)
+      matches_role?(info) && matches_line_item_total?(info)
+    end
+
+    private
+
+    def matches_role?(info)
+      if info[:user].nil?
+        role.name == :user
+      else
+        matches_user_role?(info)
+      end
+    end
+
+    def matches_user_role?(info)
+      info[:user].spree_roles.include?(role)
+    end
+
+    def matches_line_item_total?(info)
+      info[:line_item_total] > min_line_item_total
+    end
   end
 end

@@ -10,6 +10,9 @@ require 'rspec/rails'
 require 'database_cleaner'
 require 'ffaker'
 require 'capybara/poltergeist'
+require 'factory_girl'
+
+include(FactoryGirl)
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -21,6 +24,7 @@ require 'spree/testing_support/capybara_ext'
 require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/factories'
 require 'spree/testing_support/url_helpers'
+require 'spree/testing_support/order_walkthrough'
 
 # Requires factories defined in lib/spree_shipping_matrix/factories.rb
 Dir[File.join(File.dirname(__FILE__), 'factories/**/*_factory.rb')].each { |f| require f }
