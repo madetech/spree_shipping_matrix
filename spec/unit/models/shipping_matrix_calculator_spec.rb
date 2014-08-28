@@ -78,7 +78,10 @@ describe Spree::ShippingMatrixCalculator do
           package
         end
 
-        it { is_expected.to be > 0 }
+        let(:first_entry_rule) { create(:shipping_matrix_rule, matrix: matrix,
+                                                               role: create(:role, name: 'entry')) }
+
+        it { is_expected.to eq(first_entry_rule.amount.to_f) }
       end
     end
   end

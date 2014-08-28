@@ -22,7 +22,7 @@ module Spree
 
     def matches_role?(info)
       if info[:user].nil?
-        role.name == :user
+        role.name == 'entry'
       else
         matches_user_role?(info)
       end

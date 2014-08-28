@@ -6,14 +6,14 @@ feature 'Shipping Matrix in checkout flow' do
     and_there_is_1_shipping_method_with_matrix_calculator
   end
 
-  [[:entry, 26, 2.99],
-   [:entry, 52, 0.0],
-   [:vip, 26, 2.99],
-   [:vip, 52, 0.0],
-   [:ultra_vip, 26, 0.0],
-   [:ultra_vip, 52, 0.0],
-   [:press, 26, 0.0],
-   [:press, 52, 0.0]].each do |role, order_value, price|
+  [['entry', 26, '2.99'],
+   ['entry', 52, '0.00'],
+   ['vip', 26, '2.99'],
+   ['vip', 52, '0.00'],
+   ['ultra_vip', 26, '0.00'],
+   ['ultra_vip', 52, '0.00'],
+   ['press', 26, '0.00'],
+   ['press', 52, '0.00']].each do |role, order_value, price|
     scenario "Delivery price as #{role}" do
       given_i_am_logged_in_as_user_with(role)
       when_i_have_reached_the_delivery_stage_of_checkout
