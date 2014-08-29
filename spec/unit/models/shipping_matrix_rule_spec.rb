@@ -2,10 +2,12 @@ describe Spree::ShippingMatrixRule do
   context 'when created' do
     subject { described_class.create(attrs) }
 
-    let(:attrs) { { role: create(:role),
-                    min_line_item_total: 50,
-                    amount: 2.99,
-                    matrix: create(:shipping_matrix) } }
+    let(:attrs) do
+      { role: create(:role),
+        min_line_item_total: 50,
+        amount: 2.99,
+        matrix: create(:shipping_matrix) }
+    end
 
     context 'and all required parameters are provided' do
       it { is_expected.to be_valid }
