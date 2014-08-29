@@ -6,6 +6,7 @@ Advanced shipping calculator based on rules matrix for Spree.
 [![Build Status](https://travis-ci.org/madebymade/spree_shipping_matrix.svg?branch=master)](https://travis-ci.org/madebymade/spree_shipping_matrix)
 [![Test Coverage](https://codeclimate.com/github/madebymade/spree_shipping_matrix/badges/coverage.svg)](https://codeclimate.com/github/madebymade/spree_shipping_matrix)
 [![PullReview stats](https://www.pullreview.com/github/madebymade/spree_shipping_matrix/badges/master.svg?)](https://www.pullreview.com/github/madebymade/spree_shipping_matrix/reviews/master) 
+[![Dependency Status](https://gemnasium.com/madebymade/spree_shipping_matrix.svg)](https://gemnasium.com/madebymade/spree_shipping_matrix) 
 [![Brakeman](http://rails-brakeman.com/madebymade/spree_shipping_matrix.png)](http://rails-brakeman.com/madebymade/spree_shipping_matrix)
 
 ## Installation
