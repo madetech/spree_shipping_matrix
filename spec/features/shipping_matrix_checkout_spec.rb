@@ -29,7 +29,7 @@ feature 'Shipping Matrix in checkout flow' do
     end
   end
 
-  scenario "Free shipping method always wins" do
+  scenario 'Free shipping method always wins' do
     given_i_am_logged_in
     when_there_is_a_free_delivery_method
     then_the_delivery_should_be_free
