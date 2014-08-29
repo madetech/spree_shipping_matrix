@@ -27,7 +27,7 @@ require 'spree/testing_support/url_helpers'
 require 'spree/testing_support/order_walkthrough'
 
 # Requires factories defined in lib/spree_shipping_matrix/factories.rb
-Dir[File.join(File.dirname(__FILE__), 'factories/**/*_factory.rb')].each { |f| require f }
+require 'spree_shipping_matrix/factories'
 
 Capybara.default_selector = :css
 Capybara.javascript_driver = :poltergeist
