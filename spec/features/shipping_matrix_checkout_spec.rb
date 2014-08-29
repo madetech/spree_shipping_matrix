@@ -45,8 +45,8 @@ end
 def and_there_are_payment_methods_and_zones
   FactoryGirl.create(:check_payment_method)
   country = FactoryGirl.create(:country)
-  Spree::Zone.global.members << Spree::ZoneMember.create(:zoneable => country)
-  country.states << FactoryGirl.create(:state, :country => country)
+  Spree::Zone.global.members << Spree::ZoneMember.create(zoneable: country)
+  country.states << FactoryGirl.create(:state, country: country)
 end
 
 def and_there_is_1_shipping_matrix_with_num_of_rules(num_of_rules)
@@ -61,7 +61,7 @@ end
 def when_i_have_reached_the_delivery_stage_of_checkout
   order = OrderWalkthrough.up_to('delivery')
   order.update(user_id: @user.id)
-  Spree::CheckoutController.any_instance.stub(:current_order => order)
+  Spree::CheckoutController.any_instance.stub(current_order: order)
 end
 
 def and_my_basket_value_is(value)
