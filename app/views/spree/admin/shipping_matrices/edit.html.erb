@@ -1,4 +1,4 @@
-<%= render partial: 'spree/admin/shared/configuration_menu' %>
+<%= render 'spree/admin/shared/configuration_menu' %>
 
 <% content_for :page_title do %>
   <%= Spree.t(:editting, scope: :shipping_matrix) %>
@@ -13,13 +13,12 @@
   </li>
 <% end %>
 
-<%= render partial: 'spree/shared/error_messages',
-           locals: { target: @shipping_matrix } %>
+<%= render 'spree/shared/error_messages', target: @shipping_matrix %>
 
 <%= form_for [:admin, @shipping_matrix] do |f| %>
   <fieldset>
     <legend align="center"><%= Spree.t(:editting, scope: :shipping_matrix) %></legend>
-    <%= render :partial => 'form', :locals => { :f => f } %>
-    <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+    <%= render 'form', f: f %>
+    <%= render 'spree/admin/shared/edit_resource_links' %>
   </fieldset>
 <% end %>
