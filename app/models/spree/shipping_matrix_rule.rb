@@ -33,7 +33,7 @@ module Spree
     end
 
     def matches_line_item_total?(info)
-      info[:line_item_total] > min_line_item_total
+      info[:line_item_total] >= min_line_item_total
     end
   end
 end
