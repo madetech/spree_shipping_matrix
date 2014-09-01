@@ -83,7 +83,7 @@ def and_i_have_reached_the_delivery_stage_of_checkout
   @order.ship_address = FactoryGirl.create(:address, :country_id => Spree::Zone.global.members.first.zoneable.id)
   @order.next!
   @order.next!
-  Spree::CheckoutController.any_instance.stub(:current_order => @order)
+  allow_any_instance_of(Spree::CheckoutController).to receive(:current_order) { @order }
 end
 
 def and_there_is_more_than_one_shipping_method
