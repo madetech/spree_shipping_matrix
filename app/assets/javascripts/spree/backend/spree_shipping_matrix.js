@@ -2,16 +2,17 @@
 
 $(document).on('click', '.js-remove-row', function () {
   var $removeLink = $(this);
-  var $row = $removeLink.closest('.row');
+  var $row = $removeLink.closest('tr');
   var destroyName = $removeLink.data('row-object-name') + '[_destroy]';
   $row.replaceWith(
     '<input type="hidden" name="' + destroyName + '" value="1" />');
   return false;
 });
 
-$(document).on('click', '.js-duplicate-last-row', function () {
+$(document).on('click', '.js-shipping-matrix-rules [href="#new-rule"]', function() {
+  console.log('click');
   var $duplicateLink = $(this);
-  var $row = $duplicateLink.prev();
+  var $row = $('#list_shipping_matrix tr').last();
   var reRowId = /\[([0-9]+)\]/;
   var rowId = parseInt(reRowId.exec($row.find('[name]:first').attr('name'))[1], 10);
   var newRowId = rowId + 1;
@@ -31,7 +32,7 @@ $(document).on('click', '.js-duplicate-last-row', function () {
 
   $duplicateRow.find('.select2-container').remove();
 
-  $duplicateLink.before($duplicateRow);
+  $duplicateRow.insertAfter($row);
 
   $('select.select2').select2({
     allowClear: true,

@@ -4,10 +4,14 @@
 en:
   spree:
     shipping_matrix:
+      add_rule: 'Add rule'
+      amount: 'Amount'
+      back: 'Back to Shipping Matrices'
+      editting: 'Edit Shipping Matrix'
+      min_line_item_total: 'Min line item total'
       new: 'New Shipping Matrix'
       name: 'Name'
+      role: 'Role'
+      rules: 'Rules'
       title: 'Shipping Matrices'
-      editting: 'Edit Shipping Matrix'
-      back: 'Back to Shipping Matrices'
-      add_rule: 'Add rule'
     matrix_id: 'Shipping Matrix'

@@ -1,33 +1,30 @@
-<div class="row">
-  <div class="alpha four columns">
-    <%= f.label(:role) %>
+<tr>
+  <td>
     <%= f.collection_select(:role_id,
                             Spree::Role.all,
                             :id, :name, {},
                             {class: 'select2 fullwidth'}) %>
-  </div>
-
-  <div class="four columns">
-    <%= f.label(:min_line_item_total) %>
+  </td>
+  <td>
     <%= f.number_field(:min_line_item_total,
                        value: number_with_precision(f.object.min_line_item_total,
                                                     precision: 2)) %>
-  </div>
-
-  <div class="omega four columns">
-    <%= f.label(:amount) %>
+  </td>
+  <td>
     <%= f.number_field(:amount,
                        value: number_with_precision(f.object.amount,
                                                     precision: 2)) %>
-
+  </td>
+  <td class="actions">
     <% if f.object.persisted? %>
       <a
         href="#remove-<%= f.object.id %>"
-        class="js-remove-row"
+        class="fa fa-trash icon_link with-tip no-text js-remove-row"
+        data-confirm="<%= Spree.t(:confirm, scope: :admin) %>"
         data-row-object-name="<%= f.object_name %>"
+        title="<%= Spree.t(:remove) %>"
         >
-        <%= Spree.t(:remove) %>
       </a>
     <% end %>
-  </div>
-</div>
+  </td>
+</tr>
