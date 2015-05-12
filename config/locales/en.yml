@@ -7,6 +7,7 @@ en:
       add_rule: 'Add rule'
       amount: 'Amount'
       back: 'Back to Shipping Matrices'
+      confirm: 'Are you sure?'
       editting: 'Edit Shipping Matrix'
       min_line_item_total: 'Min line item total'
       new: 'New Shipping Matrix'

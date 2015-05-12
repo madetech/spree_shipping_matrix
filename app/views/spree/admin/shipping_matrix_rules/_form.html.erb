@@ -18,9 +18,10 @@
   <td class="actions">
     <% if f.object.persisted? %>
       <a
+        id="rule-<%= f.object.id %>"
         href="#remove-<%= f.object.id %>"
         class="fa fa-trash icon_link with-tip no-text js-remove-row"
-        data-confirm="<%= Spree.t(:confirm, scope: :admin) %>"
+        data-confirm="<%= Spree.t(:confirm, scope: :shipping_matrix) %>"
         data-row-object-name="<%= f.object_name %>"
         title="<%= Spree.t(:remove) %>"
         >

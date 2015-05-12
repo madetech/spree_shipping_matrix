@@ -62,7 +62,7 @@ end
 
 def when_i_remove_1_rule
   visit spree.edit_admin_shipping_matrix_path(@matrix)
-  click_link 'Remove'
+  click_link 'rule-1'
   click_button 'Update'
 end
 
